@@ -1,0 +1,9 @@
+{
+  "ucp": {
+    "version": "2026-01-23",
+    "agent": {
+      "name": "pikachu temp agent"
+    },
+    "services": {}
+  }
+}
