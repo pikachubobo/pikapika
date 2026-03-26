@@ -1,9 +1,58 @@
 {
-  "ucp": {
-    "version": "2026-01-23",
-    "agent": {
-      "name": "pikachu temp agent"
-    },
-    "services": {}
+  "version": "2026-01-23",
+  "supported_versions": {
+    "2026-01-23": "https://pikachubobo.github.io/pikapika/.well-known/ucp/2026-01-23"
+  },
+  "agent": {
+    "name": "Pikapika UCP Platform",
+    "profile": "https://pikachubobo.github.io/pikapika/.well-known/ucp"
+  },
+  "capabilities": {
+    "dev.ucp.shopping.checkout": [
+      {
+        "version": "2026-01-23",
+        "spec": "https://ucp.dev/2026-01-23/specification/checkout",
+        "schema": "https://ucp.dev/2026-01-23/schemas/shopping/checkout.json"
+      }
+    ],
+    "dev.ucp.shopping.fulfillment": [
+      {
+        "version": "2026-01-23",
+        "spec": "https://ucp.dev/2026-01-23/specification/fulfillment",
+        "schema": "https://ucp.dev/2026-01-23/schemas/shopping/fulfillment.json",
+        "extends": "dev.ucp.shopping.checkout"
+      }
+    ],
+    "dev.ucp.shopping.discount": [
+      {
+        "version": "2026-01-23",
+        "spec": "https://ucp.dev/2026-01-23/specification/discount",
+        "schema": "https://ucp.dev/2026-01-23/schemas/shopping/discount.json",
+        "extends": "dev.ucp.shopping.checkout"
+      }
+    ],
+    "dev.ucp.shopping.order": [
+      {
+        "version": "2026-01-23",
+        "spec": "https://ucp.dev/2026-01-23/specs/shopping/order",
+        "schema": "https://ucp.dev/2026-01-23/schemas/shopping/order.json"
+      }
+    ]
+  },
+  "payment_handlers": {
+    "com.google.pay": [
+      {
+        "id": "gpay",
+        "version": "2026-01-11",
+        "enabled": true
+      }
+    ],
+    "dev.shopify.card": [
+      {
+        "id": "shopify.card",
+        "version": "2026-01-15",
+        "enabled": true
+      }
+    ]
   }
 }
